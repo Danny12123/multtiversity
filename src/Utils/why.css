@@ -1,0 +1,62 @@
+#why {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 50px 0;
+}
+.why_head h2 {
+    color: #112233;
+    margin: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+.why_head p {
+    margin: 0;
+    color: gray;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.why_head hr {
+    width: 30%;
+    margin: 0 auto;
+}
+.why_us {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(327px, 1fr));
+    grid-gap: 1rem;
+}
+.why_box {
+    padding: 10px;
+    text-align: start;
+    transition: all 0.3s ease-in;
+}
+.why_box:hover {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+.why_box p {
+    color: gray;
+    font-weight: 500;
+    margin: 0;
+}
+.why_fa_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #7b1113;
+}
+.why_b_fa {
+    display: flex;
+    align-items: center;
+}
+.why_fa {
+    color: #aabbcc;
+    font-size: 20px;
+}
+.why_b_fa h3 {
+    margin: 0;
+    padding-left: 10px;
+    font-size: 22px;
+    font-weight: 500;
+}

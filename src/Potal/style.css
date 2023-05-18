@@ -1,0 +1,16 @@
+.p_box {
+    width: 100%;
+    display: flex;
+}
+.p_box_1 {
+    /* width: 25%; */
+    flex: 1;
+    height: 100vh;
+    background-color: green;
+}
+.p_box_2 {
+    /* width: 85%; */
+    flex: 4;
+    height: 100vh;
+    background-color: rgb(11, 0, 128);
+}

@@ -1,0 +1,56 @@
+#partner {
+    width: 100%;
+    height: inherit;
+    padding: 30px 0;
+}
+.partner_head {
+    text-align: center;
+    margin: 0 auto;
+}
+.partner_head h2 {
+    margin: 0;
+}
+.partner_head hr {
+    width: 30%;
+    margin: 0 auto;
+}
+.partner_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.part_cont1 {
+    padding-top: 20px;
+}
+.partner_content .part_cont1 p {
+    color: gray;
+    font-weight: 500;
+}
+.partner_content .part_cont1 button {
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 5px 12px;
+    margin: 5px 0;
+    background-color: #7b1113;
+    font-weight: 400;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 0.70px 65px 20px rgba(0, 0, 0, 0.223);
+    transition: all 0.35s ease-in;
+}
+.partner_content .part_cont1 button:hover {
+    background-color: #430304;
+    color: #f5f5f5;
+}
+.part_cont2 {
+    padding-top: 20px;
+}
+.partner_content ul {
+    margin: 0;
+    padding: 0;
+}
+.partner_content ul li {
+    color: gray;
+    font-weight: 500;
+}
