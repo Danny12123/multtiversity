@@ -10,6 +10,8 @@ import Mission from '../Utils/MissV/Mission';
 import Vision from '../Utils/MissV/Vision';
 import Partners from '../Utils/Partners/Partners';
 import Department from '../Utils/Department/Department';
+import Facilitators from '../Utils/Partners/Facilitators';
+import Location from '../Utils/Location/Location';
 const Home = () => {
   return (
     <div>
@@ -23,6 +25,8 @@ const Home = () => {
       <Mission />
       <Vision />
       <Partners />
+      <Facilitators />
+      <Location />
       {/* <Department /> */}
     <Footer />
     </div>

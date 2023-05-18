@@ -1,8 +1,23 @@
-import React from 'react'
-import './partners.css'
-import { Row ,Col, Container } from 'react-bootstrap'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import "./partners.css";
+import { Row, Col, Container } from "react-bootstrap";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Partners = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => {
+    setShow(true);
+  };
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   return (
     <div id="partner">
       <Container>
@@ -12,21 +27,7 @@ const Partners = () => {
         </div>
         <Row>
           <Col md>
-            <div className="partner_content">
-              <div className="part_cont1">
-                <p>
-                  We believe that in today's world, partnerships are more
-                  profitable and creative than competition. We are always open
-                  to partner with interested and capable persons/organizations
-                  to help reach out to a more larger audience. For collaborative
-                  works or Agencies, let's work together!
-                </p>
-                <button>Partners</button>
-              </div>
-            </div>
-          </Col>
-          <Col md>
-            <div className="partner_content">
+            <div className="partner_content" data-aos="flip-left">
               <div className="part_cont2">
                 <h4>Connect with us if you are into</h4>
                 <ul>
@@ -38,13 +39,51 @@ const Partners = () => {
                   <li>Social Media Influencers/Content Creators</li>
                   <li>Mentors looking for Mentees</li>
                 </ul>
+                <button onClick={handleShow}>Partners</button>
+              </div>
+            </div>
+          </Col>
+          <Col md>
+            <div className="partner_content" data-aos="flip-right">
+              <div className="part_cont1">
+                <img src="./image/partenr.jpg" alt="" />
               </div>
             </div>
           </Col>
         </Row>
       </Container>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Multiversity Of Africa</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="par_form">
+            <h3>Fill out the form</h3>
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Email" />
+            <input type="text" placeholder="Phone" />
+            <input type="text" placeholder="Website" />
+            <input type="text" placeholder="Country of residence" />
+            <input type="text" placeholder="Your company / brand" />
+            <textarea
+              cols="
+            "
+              rows="10"
+              placeholder="Why do you want to be our Partener?"
+            ></textarea>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button className="bt_submit" onClick={handleClose}>
+            Submit
+          </Button>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
-}
+};
 
-export default Partners
+export default Partners;

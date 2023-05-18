@@ -1,29 +1,31 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './why.css'
 import { BiTime } from "react-icons/bi";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import { BsGlobeAmericas } from "react-icons/bs";
 import { Container } from 'react-bootstrap';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const WhyUs = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   return (
     <div id="why">
       <Container>
         <div>
-          <div className="why_head">
+          <div className="why_head" data-aos="fade-up">
             <h2>Why Choose Us</h2>
             <p>
-              "WE GUARANTEE YOUR ADVANTAGE!" ✍️ Here, We Mirror Your True
-              Character! ✍️ The Character of Self-Made! ✍️ Born Resolute &
-              Daring! ✍️ You Are Black to Last; It's The Spirit of Africa ✍️
-              It's Ancient; Legendary & Futuristic...You Are Made For More!
-              ...✍️ SO GO AHEAD; JOIN US TODAY & FIND OUT HOW?g
+              "WE GUARANTEE YOUR ADVANTAGE!" 
             </p>
             <hr />
           </div>
 
           <div className="why_us">
-            <div className="why_box">
+            <div className="why_box" data-aos="fade-up">
               <div className="why_b_fa">
                 <div className="why_fa_box">
                   <BiTime className="why_fa" />
@@ -38,7 +40,7 @@ const WhyUs = () => {
                 lifestyle.
               </p>
             </div>
-            <div className="why_box">
+            <div className="why_box" data-aos="fade-up">
               <div className="why_b_fa">
                 <div className="why_fa_box">
                   <BsGlobeAmericas className="why_fa" />
@@ -53,7 +55,7 @@ const WhyUs = () => {
                 networks, making the most of your digital experiences.
               </p>
             </div>
-            <div className="why_box">
+            <div className="why_box" data-aos="fade-up">
               <div className="why_b_fa">
                 <div className="why_fa_box">
                   <AiFillSafetyCertificate className="why_fa" />

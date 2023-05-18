@@ -1,9 +1,17 @@
 import { Container } from 'react-bootstrap';
-import './style.css'
+import React, {useEffect} from 'react';
+import './style.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Mission = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   return (
-    <div id="vision">
+    <div id="vision" data-aos="fade-up">
       <Container>
         <div className="vis_head">
           <h2>Our Mission</h2>
