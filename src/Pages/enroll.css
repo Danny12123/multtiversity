@@ -41,8 +41,13 @@
 .card_holder h6 span {
     color: red;
 }
+.card_holder .span {
+    color: red;
+}
+
 .card_holder input {
     padding: 5px;
+    outline: none;
     border: none;
     border-bottom: 1px solid #000;
     width: 100%;
@@ -52,7 +57,7 @@
     padding: 5px;
     outline: none;
     border: none;
-    border-bottom: 1px ;
+    border-bottom: 1px solid #000;
 }
 .ra_box {
     display: flex;
@@ -79,4 +84,22 @@
 }
 .sub_ra {
     width: 100%;
+}
+.under_bt {
+    text-align: center;
+    margin: 0 auto;
+}
+.under_bt p {
+    text-align: center;
+    margin: 0 auto;
+}
+.ch_under_head_img {
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+}
+.ch_under_head_img img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
 }

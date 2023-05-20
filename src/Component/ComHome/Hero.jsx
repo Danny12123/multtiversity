@@ -27,7 +27,7 @@ const Hero = () => {
         <Modal.Body>
           <div>
             <h3>Executive Short Courses</h3>
-            <Button>
+            <Button className="under_btnn">
               <Link
                 to="/enroll"
                 style={{ textDecoration: "none", color: "#fff" }}
@@ -38,7 +38,14 @@ const Hero = () => {
           </div>
           <div>
             <h3>Undergraduate Courses</h3>
-            <Button>Apply online</Button>
+            <Button className="under_btnn">
+              <Link
+                to="/enrollunderg"
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                Apply online
+              </Link>
+            </Button>
           </div>
         </Modal.Body>
         <Modal.Footer>

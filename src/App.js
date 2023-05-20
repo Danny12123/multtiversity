@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./Pages/Home";
 import NavBar from "./Component/ComHome/NavBar";
 import Enroll from "./Pages/Enroll";
+import EnrollUnderG from "./Pages/EnrollUnderG";
 import Index from "./Potal";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/enroll" element={<Enroll />} />
+          <Route path="/enrollunderg" element={<EnrollUnderG />} />
           <Route path="/potal" element={<Index />} />
         </Routes>
       </BrowserRouter>
