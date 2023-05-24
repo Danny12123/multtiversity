@@ -103,3 +103,12 @@
     height: inherit;
     object-fit: cover;
 }
+
+/* ------------------------ */
+
+.dis_pament {
+    display:  none;
+}
+.dis_pament_active {
+    display:  block;
+}

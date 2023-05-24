@@ -6,13 +6,41 @@ import "./partners.css";
 import { Row, Col, Container } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 
 const Partners = () => {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+ 
+  const [FullName, setFullName] = useState("");
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [website, setWebsite] = useState('');
+  const [country, setCountry] = useState('');
+  const [company, setCompany] = useState('');
+  const [whyText, setWhyText] = useState('');
   const handleShow = () => {
     setShow(true);
   };
+
+   const handleClose = async () => {
+    const partnerShip = {
+      FullName,
+      email,
+      phone,
+      website,
+      country,
+      company,
+      whyText,
+    };
+    try {
+      const res = await axios.post("partnerRoute/", partnerShip);
+      console.log(res.data);
+    } catch (err) {
+      console.log(err)  
+    }
+    setShow(false);
+   }
+
   useEffect(() => {
     AOS.init({
       duration: 2000,
@@ -59,17 +87,49 @@ const Partners = () => {
         <Modal.Body>
           <div className="par_form">
             <h3>Fill out the form</h3>
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Email" />
-            <input type="text" placeholder="Phone" />
-            <input type="text" placeholder="Website" />
-            <input type="text" placeholder="Country of residence" />
-            <input type="text" placeholder="Your company / brand" />
+            <input
+              type="text"
+              placeholder="Name"
+              value={FullName}
+              onChange={(e) => setFullName(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />{" "}
+            <input
+              type="text"
+              placeholder="Phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Website"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Country of residence"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Your company / brand"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+            />
             <textarea
               cols="
             "
               rows="10"
               placeholder="Why do you want to be our Partener?"
+              value={whyText}
+              onChange={(e) => setWhyText(e.target.value)}
             ></textarea>
           </div>
         </Modal.Body>

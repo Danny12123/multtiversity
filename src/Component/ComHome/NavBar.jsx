@@ -25,6 +25,12 @@ const NavBar = () => {
             >
               <span>Our Courses</span>
             </Nav.Link>
+            <Nav.Link
+              href="#facilitators"
+              style={{ color: "#fff", fontWeight: "700" }}
+            >
+              <span>Facilitators</span>
+            </Nav.Link>
             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -39,14 +45,14 @@ const NavBar = () => {
           </Nav>
           <Nav>
             <Nav.Link
-              href="#deets"
+              href="#vision"
               style={{ color: "#fff", fontWeight: "700" }}
             >
               <span>Our Mission</span>
             </Nav.Link>
             <Nav.Link
               eventKey={2}
-              href="#memes"
+              href="#vis_bg"
               style={{ color: "#fff", fontWeight: "700" }}
             >
               <span>Our Vision</span>

@@ -18,9 +18,6 @@ const WhyUs = () => {
         <div>
           <div className="why_head" data-aos="fade-up">
             <h2>Why Choose Us</h2>
-            <p>
-              "WE GUARANTEE YOUR ADVANTAGE!" 
-            </p>
             <hr />
           </div>
 

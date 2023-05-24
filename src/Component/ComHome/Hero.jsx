@@ -14,9 +14,8 @@ const Hero = () => {
       <div className="hero_content">
         <h2>Multiversity Of Africa </h2>
         <p>
-          Leading the Pack is fun when you are EXACTLY what Employers need in
-          this post-covid era. Any day, Anywhere; you are guaranteed of
-          STANDING-TALLER!
+          We are excited to have <br /> you join our educational community.
+          <br /> Get ready for an inspiring journey of learning and growth
         </p>
         <button onClick={handleShow}>Enroll now</button>
       </div>

@@ -21,3 +21,11 @@
     width: 30%;
     margin: 0 auto;
 }
+#vision p {
+    color: gray;
+    font-weight: 500;
+}
+#vis_bg p {
+    color: gray;
+    font-weight: 500;
+}

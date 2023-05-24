@@ -1,44 +1,60 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
+import { CourseOption } from './Data/EnrollData';
+import axios from "axios";
+import Payment from '../Pages/Payment/Payment';
+
 
 const EnrollForm = () => {
   const [firstName, setFirstName] = useState('');
   const [age, setAge] = useState('');
-  const [genderMale, setGenderMale] = useState('');
-  const [genderFeMale, setGenderFeMale] = useState('');
+  // const [genderMale, setGenderMale] = useState('');
+  // const [genderFeMale, setGenderFeMale] = useState('');
   const [currentWork, setCurrentWork] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [cyberSeurity, setCyberSeurity] = useState('');
-  const [cloudSecurityManager, setCloudSecurityManager] = useState('');
-  const [leadEthicalHacker, setLeadEthicalHacker] = useState('');
-  const [penetrationTestingProfessional, setPenetrationTestingProfessional] = useState('');
-  const [computerForenics, setComputerForenics] = useState('');
-  const [LeadForenics, setLeadForenics] = useState('');
-  const [agricultreAndFood, setAgricultreAndFood] = useState('');
-  const [scurityAndRiskManagement, setScurityAndRiskManagement] = useState('');
-  const [businessAndCryptocurrency, setBusinessAndCryptocurrency] = useState('')
-  const [blockchain, setBlockchain] = useState('');
-  const [projectAndBandManagement, setProjectAndBandManagement] = useState('');
-  const [earlyChildhoodAndMontessori, setEarlyChildhoodAndMontessori] = useState('');
-  const [earlyChildhoodAndMeontessori, setEarlyChildhoodAndMeontessori] = useState('');
-  const [businessStartUp, setBusinessStartUp] = useState('');
-  const [communicationAndPublc, setCommunicationAndPublc] = useState('');
-  const [b5ankingAndFinance, setBankingAndFinance] = useState("");
-  const [projectManagement, setProjectManagement] = useState('');
-  const [oilandGasMarketing, setOilandGasMarketing] = useState('');
-  const [strategicManagement, setStrategicManagement] = useState('');
-  const [marketingManagement, setMarketingManagement] = useState('');
-  const [securityAndRiskManagementt, setSecurityAndRiskManagementt] = useState('');
-  const [humanResource0Management, setHumanResource0Management] = useState('');
-  const [logisticsAndSupplyChainManagement, setLogisticsAndSupplyChainManagement] = useState('');
-  const [OccupationalHealthAndSafetyManagment, setOccupationalHealthAndSafetyManagment] = useState('');
-  const [online, setOnline] = useState('');
+  // const [online, setOnline] = useState('');
   const [inPersonClassRoom, setInPersonClassRoom] = useState('');
   const [socialMediaMerketing, setSocialMediaMerketing] = useState('');
   const [referredBrAFrined, setReferredBrAFrined] = useState('');
   const [referredMessage, setReferredMessage] = useState('');
+  const [courseOption, setCourseOption] = useState('');
+  // const [selectedOption, setSelectedOption] = useState("");
+   const [topping, setTopping] = useState("");
+   const [teachingMode, setTeachingMode] = useState('');
+   const [howYouFind, setHowYouFind] = useState('');
+   const [lastName, setLastName] = useState("");
+   const [otherName, setOtherName] = useState("");
+   const [isActive, setIsActive] = useState(true);
+   const [userInfo, setUserInfo] = useState(null);
+   
 
+  const handleEnrollF = async() => {
+    const enrollExecutive = {
+      executive: "Executive Short Course",
+      teachingMode,
+      howYouFind,
+      topping,
+      firstName,
+      lastName,
+      otherName,
+      age,
+      currentWork,
+      email,
+      phoneNumber,
+      socialMediaMerketing,
+      referredBrAFrined,
+      referredMessage,
+      courseOption,
+    };
+    try {
+      const res = await axios.post("executive/", enrollExecutive);
+      setUserInfo(res.data);
+    } catch (err) {
+      console.log(err)  
+    }
+    setIsActive(false);
+  }
 
   return (
     <div>
@@ -73,7 +89,33 @@ const EnrollForm = () => {
         <input
           type="text"
           placeholder="Your Response"
+          required
+          value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
+        />
+      </div>
+      <div className="card_holder">
+        <h6>
+          What is your last name? <span>*</span>
+        </h6>
+        <input
+          type="text"
+          placeholder="Your Response"
+          required
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
+      </div>
+      <div className="card_holder">
+        <h6>
+          What is your Other name? <span>*</span>
+        </h6>
+        <input
+          type="text"
+          placeholder="Your Response"
+          required
+          value={otherName}
+          onChange={(e) => setOtherName(e.target.value)}
         />
       </div>
       <div className="card_holder">
@@ -81,8 +123,9 @@ const EnrollForm = () => {
           What is your Age ? <span>*</span>
         </h6>
         <input
-          type="text"
+          type="number"
           placeholder="Your Response"
+          value={age}
           onChange={(e) => setAge(e.target.value)}
         />
       </div>
@@ -93,12 +136,22 @@ const EnrollForm = () => {
         <div className="ra_box">
           <input
             type="radio"
-            onChange={(e) => setGenderFeMale(e.target.value)}
+            value="Female"
+            name="gender"
+            required
+            checked={topping === "Female"}
+            onChange={(e) => setTopping(e.target.value)}
           />
           <span>Female</span>
         </div>
         <div className="ra_box">
-          <input type="radio" onChange={(e) => setGenderMale(e.target.value)} />
+          <input
+            type="radio"
+            value="Male"
+            name="gender"
+            checked={topping === "Male"}
+            onChange={(e) => setTopping(e.target.value)}
+          />
           <span>Male</span>
         </div>
       </div>
@@ -107,6 +160,7 @@ const EnrollForm = () => {
         <input
           type="text"
           placeholder="Your Response"
+          value={currentWork}
           onChange={(e) => setCurrentWork(e.target.value)}
         />
       </div>
@@ -117,6 +171,7 @@ const EnrollForm = () => {
         <input
           type="text"
           placeholder="Your Response"
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
@@ -127,6 +182,7 @@ const EnrollForm = () => {
         <input
           type="text"
           placeholder="Your Response"
+          value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
         />
       </div>
@@ -134,172 +190,13 @@ const EnrollForm = () => {
         <h6>
           Course option <span>*</span>
         </h6>
-        <select>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setCyberSeurity(e.target.value)}
-          >
-            Cyber Security (2days with exams)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setCloudSecurityManager(e.target.value)}
-          >
-            Cybersecurity Manager (5days with exams)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setCloudSecurityManager(e.target.value)}
-          >
-            Cloud Security Manager (5days with exams)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setLeadEthicalHacker(e.target.value)}
-          >
-            Lead Ethical Hacker (5days with exams)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setPenetrationTestingProfessional(e.target.value)}
-          >
-            Penetration Testing Professional (5days with exams)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setComputerForenics(e.target.value)}
-          >
-            Computer Forensics (2days with exams)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setLeadForenics(e.target.value)}
-          >
-            Lead Forensic Examiner (5days with exams)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setAgricultreAndFood(e.target.value)}
-          >
-            Agriculture And Food Security (6 weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setScurityAndRiskManagement(e.target.value)}
-          >
-            Security And Risk Management (6 weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setBusinessAndCryptocurrency(e.target.value)}
-          >
-            Blockchain And Cryptocurrency (6 weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setProjectAndBandManagement(e.target.value)}
-          >
-            Project And Brand Management (6 weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setEarlyChildhoodAndMeontessori(e.target.value)}
-          >
-            Early Childhood And Montessori Education (6 weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setBusinessStartUp(e.target.value)}
-          >
-            Business Start-Up And Entrepreneurship (6 weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setCommunicationAndPublc(e.target.value)}
-          >
-            Communication And Public Relations (6 weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setBankingAndFinance(e.target.value)}
-          >
-            Banking And Finance (4 Weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setProjectManagement(e.target.value)}
-          >
-            Project Management (4 Weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setOilandGasMarketing(e.target.value)}
-          >
-            Oil and Gas Marketing (4 Weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setStrategicManagement(e.target.value)}
-          >
-            Strategic Management (4 Weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setMarketingManagement(e.target.value)}
-          >
-            Marketing Management (4 Weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setSecurityAndRiskManagementt(e.target.value)}
-          >
-            Security And Risk Management (4 Weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) => setHumanResource0Management(e.target.value)}
-          >
-            Human Resource Management (4 Weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) =>
-              setLogisticsAndSupplyChainManagement(e.target.value)
-            }
-          >
-            Logistics And Supply Chain Management (4 Weekends)
-          </option>
-          <option
-            value="#"
-            key="#"
-            onChange={(e) =>
-              setOccupationalHealthAndSafetyManagment(e.target.value)
-            }
-          >
-            Occupational Health And Safety Management (4 Weekends)
-          </option>
+        <select
+          value={courseOption}
+          onChange={(e) => setCourseOption(e.target.value)}
+        >
+          {CourseOption.map((title) => {
+            return <option key={title._id}>{title.title}</option>;
+          })}
         </select>
       </div>
       <div className="card_holder">
@@ -307,13 +204,23 @@ const EnrollForm = () => {
           Mode of teaching? <span>*</span>
         </h6>
         <div className="ra_box">
-          <input type="radio" onChange={(e) => setOnline(e.target.value)} />
+          <input
+            type="radio"
+            value="online"
+            name="modeTeaching"
+            required
+            checked={teachingMode === "online"}
+            onChange={(e) => setTeachingMode(e.target.value)}
+          />
           <span>Online</span>
         </div>
         <div className="ra_box">
           <input
             type="radio"
-            onChange={(e) => setInPersonClassRoom(e.target.value)}
+            value="inPersonClassRoom"
+            name="modeTeaching"
+            checked={teachingMode === "inPersonClassRoom"}
+            onChange={(e) => setTeachingMode(e.target.value)}
           />
           <span>In Person Classroom</span>
         </div>
@@ -325,27 +232,37 @@ const EnrollForm = () => {
         <div className="ra_box">
           <input
             type="radio"
-            onChange={(e) => setSocialMediaMerketing(e.target.value)}
+            value="socialMediaMerketing"
+            required
+            name="howdidyoufindUs"
+            checked={howYouFind === "socialMediaMerketing"}
+            onChange={(e) => setHowYouFind(e.target.value)}
           />
           <span>Social Media Marketing</span>
         </div>
         <div className="ra_box">
           <input
             type="radio"
-            onChange={(e) => setReferredBrAFrined(e.target.value)}
+            value="referredBrAFrined"
+            name="howdidyoufindUs"
+            checked={howYouFind === "referredBrAFrined"}
+            onChange={(e) => setHowYouFind(e.target.value)}
           />
           <span>Referred by a Friend</span>
         </div>
         <div className="ra_box">
           <input
             type="radio"
-            onChange={(e) => setReferredBrAFrined(e.target.value)}
+            value={referredMessage}
+            name="howdidyoufindUs"
+            onChange={() => setReferredBrAFrined("Referred by a Friend")}
           />
           <div className="sub_ra">
             <span>Referred by a Friend: </span>
             <input
               type="text"
               className="sub_input"
+              name="howdidyoufindUs"
               placeholder="Your Response"
               onChange={(e) => setReferredMessage(e.target.value)}
             />
@@ -353,10 +270,11 @@ const EnrollForm = () => {
         </div>
       </div>
       <div className="card_holder">
-        <button className="btn-submit">
-          <Link to="/potal">Apply</Link>
+        <button className="btn-submit" onClick={handleEnrollF}>
+          Apply
         </button>
       </div>
+      {/* {userInfo && Payment} */}
     </div>
   );
 }

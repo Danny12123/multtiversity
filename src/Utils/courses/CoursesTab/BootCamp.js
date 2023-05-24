@@ -9,12 +9,13 @@ const BootCamp = () => {
           <h3>Full Stack Software Development</h3>
           <div className="co_box_content">
             <ul>
-              <li>Html</li>
-              <li>Css</li>
-              <li>Bootstrap</li>
+              <li>Html 5</li>
+              <li>Css 3</li>
+              <li>Bootstrap 5</li>
               <li>GitHub</li>
               <li>Hosting</li>
-              <li>JavaScript</li>
+              <li>JavaScript ES6</li>
+              <li>DOM Manipulation</li>
               <li>Data structures & algorithms</li>
               <li>React.js</li>
               <li>Firebase</li>
@@ -29,9 +30,12 @@ const BootCamp = () => {
           <h3>Front End Development</h3>
           <div className="co_box_content">
             <ul>
-              <li>Html</li>
-              <li>Css</li>
-              <li>Bootstrap</li>
+              <li>Html 5</li>
+              <li>Css 3</li>
+              <li>Bootstrap 5</li>
+              <li>GitHub</li>
+              <li>Hosting</li>
+              <li>JavaScript ES6</li>
               <li>GitHub</li>
               <li>Hosting</li>
               <li>JavaScript</li>
@@ -46,12 +50,17 @@ const BootCamp = () => {
           <h3>Back End Development</h3>
           <div className="co_box_content">
             <ul>
+              <li>Rest</li>
+              <li>APIs</li>
+              <li>Databases</li>
               <li>JavaScript</li>
+              <li>React.js</li>
               <li>Data structures & algorithms</li>
               <li>Firebase</li>
               <li>Node.js</li>
               <li>MongoDB</li>
             </ul>
+            <button>Apply now</button>
           </div>
         </div>
       </section>

@@ -26,7 +26,7 @@ const Courses = () => {
       <Container>
         <div className="course_head" data-aos="fade-up">
           <h2>Our Courses</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p>
+          {/* <p>Lorem ipsum dolor sit amet consectetur, adipisicing</p> */}
           <hr />
         </div>
 
@@ -36,9 +36,9 @@ const Courses = () => {
               className={coursesTab === 1 ? "course_active" : null}
               onClick={() => handleCourseTab(1)}
             >
-              Diploma Programs
+              Programs
             </li>
-            <li
+            {/* <li
               className={coursesTab === 2 ? "course_active" : null}
               onClick={() => handleCourseTab(2)}
             >
@@ -49,7 +49,7 @@ const Courses = () => {
               onClick={() => handleCourseTab(3)}
             >
               Degree Programs
-            </li>
+            </li> */}
             <li
               className={coursesTab === 4 ? "course_active" : null}
               onClick={() => handleCourseTab(4)}
@@ -67,7 +67,7 @@ const Courses = () => {
           >
             <Diploma />{" "}
           </div>
-          <div
+          {/* <div
             className={
               coursesTab === 2 ? "cou_tab_box_item_active" : "cou_tab_box_item"
             }
@@ -80,7 +80,7 @@ const Courses = () => {
             }
           >
             <Degree />{" "}
-          </div>
+          </div> */}
           <div
             className={
               coursesTab === 4 ? "cou_tab_box_item_active" : "cou_tab_box_item"
